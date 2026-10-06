@@ -1,0 +1,78 @@
+{
+  "name": "@cruxgarden/plasma-ui",
+  "version": "0.7.0",
+  "description": "Liquid panels for React, rendered in WebGL on canvas: every panel is one shared plasma - they fuse on contact, refract, and snap to a grid.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --format=esm --jsx=automatic --target=es2020 --external:react --external:react-dom --outfile=dist/index.js && tsc",
+    "build:site": "node site/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "typecheck:app": "tsc -p tsconfig.app.json",
+    "typecheck:react19": "npm i --no-save --no-audit --no-fund @types/react@19 @types/react-dom@19 && tsc -p tsconfig.app.json",
+    "format:check": "prettier --check site examples scripts",
+    "test": "node --test tests/*.test.mjs",
+    "prepublishOnly": "npm run verify",
+    "format": "prettier --write .",
+    "check:docs": "node scripts/check-docs.mjs",
+    "verify": "npm run typecheck && npm run typecheck:app && npm run format:check && npm test && npm run build && npm run check:docs",
+    "publish:patch": "npm version patch && npm publish && git push && git push --tags",
+    "publish:minor": "npm version minor && npm publish && git push && git push --tags",
+    "publish:major": "npm version major && npm publish && git push && git push --tags",
+    "build:example": "node examples/workspace/build.mjs",
+    "build:pages": "node scripts/build-pages.mjs"
+  },
+  "author": "The Keeper",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.9.3"
+  },
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "keywords": [
+    "crux",
+    "cruxgarden",
+    "react",
+    "webgl",
+    "panels",
+    "ui",
+    "animation"
+  ],
+  "homepage": "https://cruxgarden.github.io/plasma-ui/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CruxGarden/plasma-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CruxGarden/plasma-ui/issues"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

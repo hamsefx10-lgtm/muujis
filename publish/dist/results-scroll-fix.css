@@ -1,0 +1,81 @@
+/* Results: pinned vertical story. The layout never moves horizontally. */
+@media (min-width: 901px) {
+  main > section.results.scroll-scene {
+    min-height: 265vh !important;
+    overflow: hidden !important;
+  }
+
+  .results.scroll-scene > .scroll-stage {
+    position: sticky !important;
+    top: 0 !important;
+    display: block !important;
+    min-height: 100vh !important;
+    padding: 0 clamp(28px, 6vw, 105px) !important;
+    overflow: hidden !important;
+  }
+
+  .results.scroll-scene .results-shell {
+    display: grid !important;
+    grid-template-columns: minmax(270px, .76fr) 44px minmax(0, 1.35fr) !important;
+    gap: clamp(28px, 5vw, 76px) !important;
+    align-content: center !important;
+    width: min(100%, 1320px) !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    padding: clamp(78px, 9vw, 132px) 0 !important;
+  }
+
+  .results.scroll-scene .result-grid {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    width: auto !important;
+    margin: 0 !important;
+    align-self: center !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .results.scroll-scene .result-grid article {
+    display: grid !important;
+    grid-template-columns: 104px minmax(0, 1fr) 28px !important;
+    gap: clamp(18px, 3vw, 44px) !important;
+    align-items: center !important;
+    width: auto !important;
+    min-height: 153px !important;
+    height: auto !important;
+    padding: clamp(22px, 2.6vw, 34px) 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: .34 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: opacity .42s ease, filter .42s ease !important;
+  }
+
+  .results.scroll-scene .result-grid article:first-child {
+    border-top: 1px solid rgba(225, 239, 232, .2) !important;
+  }
+
+  .results.scroll-scene .result-grid article:not(:last-child) {
+    border-bottom: 1px solid rgba(225, 239, 232, .2) !important;
+  }
+
+  .results.scroll-scene .result-grid article.scene-current {
+    opacity: 1 !important;
+    background: linear-gradient(90deg, rgba(0, 201, 133, .055), transparent 62%) !important;
+    filter: drop-shadow(0 0 18px rgba(0, 201, 133, .13)) !important;
+  }
+
+  .results.scroll-scene .result-grid article.scene-current::before {
+    left: 0 !important;
+    top: 19% !important;
+    bottom: 19% !important;
+    width: 2px !important;
+    background: #00c985 !important;
+    box-shadow: 0 0 16px rgba(0, 201, 133, .65) !important;
+  }
+}

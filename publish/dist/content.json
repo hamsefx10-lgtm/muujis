@@ -1,0 +1,18 @@
+{
+  "brand": "Muujis",
+  "services": [
+    {"title":"Branding & Creative","status":"replace demo copy","tags":["Brand strategy","Identity","Campaigns"]},
+    {"title":"Digital Marketing","status":"replace demo copy","tags":["Content","Social","Paid media"]},
+    {"title":"Web & Technology","status":"replace demo copy","tags":["Websites","UI/UX","Platforms"]},
+    {"title":"Strategy & Consulting","status":"replace demo copy","tags":["Research","Planning","Growth"]}
+  ],
+  "projects": [
+    {"title":"Nasteexo Living","category":"Brand identity","status":"demo","image":"/images/case-brand.jpg"},
+    {"title":"Himilo Business","category":"Campaign & production","status":"demo","image":"/images/case-campaign.jpg"}
+  ],
+  "testimonials": [
+    {"name":"Maxamed Cali","company":"Replace with real client","status":"demo"},
+    {"name":"Aamina Cabdullaahi","company":"Replace with real client","status":"demo"},
+    {"name":"Axmed Yaasiin","company":"Replace with real client","status":"demo"}
+  ]
+}
