@@ -27,6 +27,7 @@ yarn-error.log*
 test_screen.png
 page_check.png
 screenshot*.png
+tmp/
 
 # OS & Editor
 .DS_Store
