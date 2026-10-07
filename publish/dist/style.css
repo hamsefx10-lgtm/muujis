@@ -1526,7 +1526,7 @@ body{background:#05080b}
 .client-logos-viewport{position:relative;z-index:1;width:100%;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0%,#000 3%,#000 97%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 3%,#000 97%,transparent 100%)}
 .client-logos-viewport:hover .client-logos-track,
 .client-logos-track:hover{animation-play-state:paused}
-.client-logos-track{display:flex;align-items:center;width:max-content;animation:client-logo-drift 26s linear infinite;will-change:transform}
+.client-logos-track{display:flex;align-items:center;width:max-content;animation:client-logo-drift 18s linear infinite;will-change:transform}
 .client-logo{position:relative;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;flex-shrink:0!important;width:auto;min-width:0!important;height:clamp(52px,6vw,76px)!important;margin-right:clamp(48px,5.5vw,70px)!important;padding:0!important;overflow:visible;background:transparent!important;border:none!important;box-shadow:none!important;border-radius:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;outline:none!important;opacity:.94;filter:none!important;cursor:pointer;user-select:none;-webkit-user-select:none;transition:opacity .2s ease,transform .2s ease}
 .client-logo::after{display:none!important}
 .client-logo:hover,.client-logo:focus{opacity:1!important;transform:scale(1.08)!important}
@@ -1545,7 +1545,7 @@ body{background:#05080b}
   .client-logos-viewport:hover .client-logos-track,
   .client-logos-track:hover,
   .client-logos-track.is-paused{animation-play-state:running!important}
-  .client-logos-track{animation:client-logo-drift 24s linear infinite!important;pointer-events:none!important}
+  .client-logos-track{animation:client-logo-drift 16s linear infinite!important;pointer-events:none!important}
   .client-logo{height:48px!important;min-width:0!important;flex:0 0 auto!important;flex-shrink:0!important;margin-right:54px!important;padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important;border-radius:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;opacity:1!important}
   .client-logo img{max-height:44px!important;max-width:125px!important;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))!important}
 }
