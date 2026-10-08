@@ -7,13 +7,15 @@ const statement = document.querySelector('.statement'); if (statement) { const t
   { file: 'client-04-jigjiga.png', name: 'Maamulka Magaalada Jigjiga' },
   { file: 'client-05-yatim.png', name: 'Yatim Charity Organization' },
   { file: 'client-06-cyro.png', name: 'CYRO Relief Organization' },
-  { file: 'client-07-lion.png', name: 'Lion Brand' },
   { file: 'client-08-hadiya.png', name: 'Hadiya Cafe & Conference Halls' },
   { file: 'client-09-medical.png', name: 'Healthcare Partner' },
   { file: 'client-10-orange-bird.png', name: 'Fly Brand' },
-  { file: 'client-11-riseup.png', name: 'Rise Up' },
-  { file: 'client-12-syvo.png', name: 'SYVO Voluntary Organization' },
-  { file: 'client-13-havoyoco.png', name: 'HAVOYOCO Committee' }
+  { file: 'client-13-havoyoco.png', name: 'HAVOYOCO Committee' },
+  { file: 'client-14-milano.png', name: 'Milano Elite Suites' },
+  { file: 'client-15-warfaafinta.png', name: 'Xafiiska Warfaafinta D.D.S' },
+  { file: 'client-16-maalin-amin.png', name: 'Ma\'alin Amin GCC Construction' },
+  { file: 'client-17-purple-media.png', name: 'Media & Creative Partner' },
+  { file: 'client-18-hayaan.png', name: 'Hayaan' }
 ]; const items = logos.map((item) => `<span class="client-logo" title="${item.name}"><img src="/images/clients/clean/${item.file}" alt="${item.name}" loading="eager" decoding="async"></span>`).join(''); trust.innerHTML = `<div class="client-logos-head"><p>TRUSTED BY</p><span>Companies we have worked with</span></div><div class="client-logos-viewport"><div class="client-logos-track">${items}${items}${items}</div></div>`; statement.before(trust); const track = trust.querySelector('.client-logos-track'); if (track && window.matchMedia('(hover: hover) and (pointer: fine)').matches) { track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused'); track.addEventListener('mouseleave', () => track.style.animationPlayState = ''); } }
 const heroImage = document.querySelector('.hero-image'); if (heroImage) { heroImage.src = '/images/muujis-hero-studio.png'; heroImage.alt = 'Muujis creative team working together in a modern digital studio' }
 /* Profile-led content update: concise hero, complete services, six-step process, team and final CTA. */
