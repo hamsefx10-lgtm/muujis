@@ -186,7 +186,6 @@ if (teamApproved) {
     <div class="team-approved-grid">
       <article><div class="team-approved-photo"><img src="/images/team/ali-mohamed.png" alt="Ali"></div><h3>Ali</h3><span>Marketing Strategist/actor</span></article>
       <article><div class="team-approved-photo"><img src="/images/team/baqdaadi.png" alt="Baqdad"></div><h3>Baqdad</h3><span>Creative Director</span></article>
-      <article><div class="team-approved-photo"><img src="/images/team/shamsadiini.png" alt="Shamsadiin"></div><h3>Shamsadiin</h3><span>Media Producer</span></article>
       <article><div class="team-approved-photo"><img src="/images/team/hamse-moalin.png" alt="Hamza"></div><h3>Hamza</h3><span>Software Engineer</span></article>
     </div>
     <div class="team-approved-network" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><g class="team-connectors"><path d="M126 0 C126 62 160 82 720 72"/><path d="M522 0 C522 38 572 48 720 72"/><path d="M918 0 C918 38 868 48 720 72"/><path d="M1314 0 C1314 62 1280 82 720 72"/></g><g class="team-endpoints"><circle cx="126" cy="0" r="5"/><circle cx="522" cy="0" r="5"/><circle cx="918" cy="0" r="5"/><circle cx="1314" cy="0" r="5"/></g><g class="team-hub"><circle cx="720" cy="72" r="48"/><circle cx="720" cy="72" r="32"/><circle cx="720" cy="72" r="18"/><circle cx="720" cy="72" r="8"/></g></svg></div>
@@ -197,10 +196,14 @@ if (teamApproved) {
     const grid = teamApproved.querySelector('.team-approved-grid').getBoundingClientRect();
     const centers = cards.map(card => { const rect = card.getBoundingClientRect(); return (rect.left + rect.width / 2 - grid.left) / grid.width * 1440; });
     teamApproved.querySelectorAll('.team-connectors path').forEach((path, index) => {
+      if (index >= cards.length) { path.remove(); return; }
       const x = centers[index];
-      path.setAttribute('d', index === 0 || index === 3 ? `M${x} 0 C${x} 62 ${x} 82 720 72` : `M${x} 0 C${x} 38 ${x} 48 720 72`);
+      path.setAttribute('d', index === 0 || index === cards.length - 1 ? `M${x} 0 C${x} 62 ${x} 82 720 72` : `M${x} 0 C${x} 38 ${x} 48 720 72`);
     });
-    teamApproved.querySelectorAll('.team-endpoints circle').forEach((circle, index) => circle.setAttribute('cx', centers[index]));
+    teamApproved.querySelectorAll('.team-endpoints circle').forEach((circle, index) => {
+      if (index >= cards.length) { circle.remove(); return; }
+      circle.setAttribute('cx', centers[index]);
+    });
   };
   requestAnimationFrame(syncTeamConnectors);
   window.addEventListener('resize', syncTeamConnectors, { passive: true });
