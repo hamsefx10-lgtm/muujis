@@ -28,6 +28,7 @@ test_screen.png
 page_check.png
 screenshot*.png
 tmp/
+output/
 
 # OS & Editor
 .DS_Store
